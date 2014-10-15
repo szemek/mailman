@@ -24,6 +24,11 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_LOADERS = (
+    'hamlpy.template.loaders.HamlPyFilesystemLoader',
+    'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+)
+
 ALLOWED_HOSTS = []
 
 
