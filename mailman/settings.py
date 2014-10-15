@@ -28,6 +28,8 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
 
+SENDGRID_USERNAME = os.environ['SENDGRID_USERNAME']
+SENDGRID_PASSWORD = os.environ['SENDGRID_PASSWORD']
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -51,6 +53,7 @@ INSTALLED_APPS = (
     'mailer',
     'bootstrap3',
     'debug_toolbar.apps.DebugToolbarConfig',
+    'django_pdb',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -61,6 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_pdb.middleware.PdbMiddleware',
 )
 
 ROOT_URLCONF = 'mailman.urls'
